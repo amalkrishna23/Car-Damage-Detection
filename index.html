@@ -64,9 +64,8 @@
 
   <script>
     let model;
-    const classNames = ['High', 'Low', 'Medium'];  // Match training class order
+    const classNames = ['High', 'Low', 'Medium']; 
 
-    // Load model
     async function loadModel() {
       model = await tf.loadGraphModel('https://raw.githubusercontent.com/amalkrishna23/Car-Damage-Detection/main/model.json');
       console.log("Model loaded");
@@ -78,7 +77,6 @@
     const predictBtn = document.getElementById('predictBtn');
     const predictionText = document.getElementById('prediction');
 
-    // Image preview
     imageInput.onchange = function (event) {
       const file = event.target.files[0];
       if (file) {
@@ -93,7 +91,6 @@
       }
     };
 
-    // Predict
     predictBtn.onclick = async function () {
       if (!model) {
         alert("Model not loaded yet");
@@ -110,9 +107,8 @@
       const result = await model.predict(tensor).data();
       const topIndex = result.indexOf(Math.max(...result));
       const label = classNames[topIndex];
-      const confidence = (result[topIndex] * 100).toFixed(2);
 
-      predictionText.innerHTML = `<b>Prediction:</b> ${label}<br><b>Confidence:</b> ${confidence}%`;
+      predictionText.innerHTML = `<b>${label}</b>`;
     };
   </script>
 
