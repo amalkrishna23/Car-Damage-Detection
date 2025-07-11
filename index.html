@@ -68,7 +68,7 @@
 
     // Load model
     async function loadModel() {
-      model = await tf.loadGraphModel('./model/model.json');
+      model = await tf.loadGraphModel('https://raw.githubusercontent.com/amalkrishna23/Car-Damage-Detection/main/model.json');
       console.log("✅ Model loaded");
     }
     loadModel();
