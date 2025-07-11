@@ -108,7 +108,13 @@
       const topIndex = result.indexOf(Math.max(...result));
       const label = classNames[topIndex];
 
-      predictionText.innerHTML = `<b>${label}</b>`;
+      let color;
+      if (label === "High") color = "#dc2626";       
+      else if (label === "Medium") color = "#d97706"; 
+      else if (label === "Low") color = "#16a34a";     
+
+      predictionText.innerHTML = `<b style="color:${color}">${label}</b><br>`;
+
     };
   </script>
 
