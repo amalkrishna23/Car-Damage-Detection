@@ -55,10 +55,10 @@
   <h1>Car Damage Severity Detection</h1>
 
   <input type="file" id="imageInput" accept="image/*" style="display: none;">
-  <label for="imageInput" id="uploader">📷 Click to Upload Image</label>
+  <label for="imageInput" id="uploader">Click to Upload Image</label>
 
   <img id="preview" src="#" alt="Image Preview" style="display: none;" />
-  <button id="predictBtn" style="display: none;">🔍 Predict</button>
+  <button id="predictBtn" style="display: none;">Predict</button>
 
   <div id="prediction"></div>
 
@@ -69,7 +69,7 @@
     // Load model
     async function loadModel() {
       model = await tf.loadGraphModel('https://raw.githubusercontent.com/amalkrishna23/Car-Damage-Detection/main/model.json');
-      console.log("✅ Model loaded");
+      console.log("Model loaded");
     }
     loadModel();
 
